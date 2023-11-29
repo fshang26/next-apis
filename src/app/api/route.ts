@@ -7,6 +7,7 @@ export async function GET(request: Request) {
   const ticketRes = await fetch('https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+token.access_token+'&type=jsapi')
   const ticket = await ticketRes.json()
 
+  console.log(ticket)
   return Response.json({ ticket })
 
 }
