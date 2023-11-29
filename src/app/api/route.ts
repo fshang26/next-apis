@@ -1,6 +1,6 @@
 export async function GET(request: Request) {
-  const appId = 'wx5b33d66eeaf3e794'
-  const appsecret = '84c23d69a89cb38c4d61ec825714e2d4'
+  const appId = 'wxb71da21cc9ed0ed0'
+  const appsecret = '2903aead8e302e069e13d66e8824ba7b'
   const res = await fetch('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+appId+'&secret='+appsecret)
   const data = await res.json()
   return Response.json({ data })
