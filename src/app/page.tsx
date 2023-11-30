@@ -27,6 +27,7 @@ export default function Home() {
           ]
         })
         window.wx.ready(() => {
+          alert('1')
           window.wx.downloadImage({
             serverId: 'https://www.apple.com/v/home/bf/images/heroes/iphone-15-pro/hero_iphone15pro__i70z9oz3hj2i_small_2x.jpg',
             isShowProgressTips: 1,
