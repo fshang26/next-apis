@@ -1,4 +1,4 @@
-import sha1 = require("sha1");
+import sha1 from 'sha1'
 
 export async function GET(request: Request) {
   const appId = 'wxb71da21cc9ed0ed0'
