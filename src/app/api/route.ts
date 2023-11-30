@@ -3,7 +3,7 @@ import sha1 from 'sha1'
 export async function GET(request: Request) {
   const appId = 'wxb71da21cc9ed0ed0'
   const appsecret = '2903aead8e302e069e13d66e8824ba7b'
-  const url = 'https://next-apis-five.vercel.app/'
+  const url = 'https://next-apis-five.vercel.app'
   const tokenRes = await fetch('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+appId+'&secret='+appsecret)
   const token = await tokenRes.json()
 
