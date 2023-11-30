@@ -7,10 +7,10 @@ export async function GET(request: Request) {
   const tokenRes = await fetch('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+appId+'&secret='+appsecret)
   const token = await tokenRes.json()
 
-  return Response.json({ token })
-  // const ticketRes = await fetch('https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+token.access_token+'&type=jsapi')
-  // const ticket = await ticketRes.json()
+  const ticketRes = await fetch('https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+token.access_token+'&type=jsapi')
+  const ticket = await ticketRes.json()
 
+  return Response.json({ ticket })
   // const t = ticket.ticket
   // let o = {
   //   appId: appId,
