@@ -10,16 +10,17 @@ export async function GET(request: Request) {
   const ticketRes = await fetch('https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+token.access_token+'&type=jsapi')
   const ticket = await ticketRes.json()
 
-  return Response.json({ ticket })
-  // const t = ticket.ticket
-  // let o = {
-  //   appId: appId,
-  //   nonceStr: 'hello word',
-  //   timestamp: new Date().getTime() / 1000 + '',
-  //   signature: ''
-  // }
-  // o.signature = sha1('jsapi_ticket='+t+'&noncestr='+o.nonceStr+'&timestamp='+o.timestamp+'&url='+url).toString();
-  // return Response.json({ o })
+  //return Response.json({ ticket })
+  const t = ticket.ticket
+  let o = {
+    appId: appId,
+    nonceStr: 'hello word',
+    timestamp: new Date().getTime() / 1000 + '',
+    signature: '',
+    jsapi_ticket: t,
+  }
+  o.signature = sha1('jsapi_ticket='+t+'&noncestr='+o.nonceStr+'&timestamp='+o.timestamp+'&url='+url).toString();
+  return Response.json({ o })
 
 }
 
