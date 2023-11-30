@@ -18,6 +18,7 @@ export default function Home() {
           timestamp: j.timestamp,
           signature: j.signature,
           jsApiList: [
+            // @ts-ignore
             'checkJSApi',
             'downloadImage'
           ]
