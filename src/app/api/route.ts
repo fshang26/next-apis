@@ -14,7 +14,7 @@ export async function GET(request: Request) {
   const t = ticket.ticket
   let o = {
     appId: appId,
-    nonceStr: 'hello word',
+    nonceStr: 'helloword',
     timestamp: Math.round(new Date().getTime() / 1000) + '',
     signature: '',
     jsapi_ticket: t,
