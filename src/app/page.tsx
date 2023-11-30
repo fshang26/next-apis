@@ -18,7 +18,7 @@ export default function Home() {
           timestamp: j.timestamp,
           signature: j.signature,
           jsApiList: [
-            'onMenuShareTimeline'
+            'downloadImage'
           ]
         })
         wx.ready(() => {
