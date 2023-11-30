@@ -1,12 +1,8 @@
 "use client"
 import styles from './page.module.css'
 import { useEffect } from 'react'
+import wx from 'weixin-js-sdk'
 
-declare global {
-  interface Window {
-    wx: any;
-  }
-}
 export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
@@ -14,7 +10,7 @@ export default function Home() {
       //const r = await fetch('http://localhost:3000//api')
       const j = await r.json()
       setTimeout(() => {
-        window.wx.config({
+        wx.config({
           //beta: true,
           debug: true,
           appId: j.appId,
@@ -26,9 +22,9 @@ export default function Home() {
             'downloadImage'
           ]
         })
-        window.wx.ready(() => {
+        wx.ready(() => {
           alert('1')
-          window.wx.downloadImage({
+          wx.downloadImage({
             serverId: 'https://www.apple.com/v/home/bf/images/heroes/iphone-15-pro/hero_iphone15pro__i70z9oz3hj2i_small_2x.jpg',
             isShowProgressTips: 1,
             success: function (res: any) {
@@ -41,7 +37,7 @@ export default function Home() {
           })
         })
 
-        window.wx.error((result: any) => {
+        wx.error((result: any) => {
           const error = new Error(`wx.config error: ${JSON.stringify(result)}`)
           //error.result = result
           alert(JSON.stringify(result.errMsg))
