@@ -30,21 +30,21 @@ export default function Home() {
           window.wx.downloadImage({
             serverId: 'https://www.apple.com/v/home/bf/images/heroes/iphone-15-pro/hero_iphone15pro__i70z9oz3hj2i_small_2x.jpg',
             isShowProgressTips: 1,
-            success: function (res) {
+            success: function (res: any) {
               alert('3')
               alert(res)
             },
-            fail: function (err) {
+            fail: function (err: any) {
               alert(JSON.stringify(err))
             }
           })
         })
 
-        window.wx.error((result) => {
+        window.wx.error((result: any) => {
           const error = new Error(`wx.config error: ${JSON.stringify(result)}`)
-          error.result = result
+          //error.result = result
           alert(JSON.stringify(result.errMsg))
-          alert(JSON.stringify(result))
+          //alert(JSON.stringify(result))
         })
 
       }, 1000)
