@@ -15,7 +15,7 @@ export async function GET(request: Request) {
   let o = {
     appId: appId,
     nonceStr: 'hello word',
-    timestamp: new Date().getTime() / 1000 + '',
+    timestamp: Math.round(new Date().getTime() / 1000) + '',
     signature: '',
     jsapi_ticket: t,
   }
