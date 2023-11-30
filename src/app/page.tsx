@@ -2,6 +2,11 @@
 import styles from './page.module.css'
 import { useEffect } from 'react'
 
+declare global {
+  interface Window {
+    wx: any;
+  }
+}
 export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
