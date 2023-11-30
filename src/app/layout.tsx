@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" defer></script>
+        <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js" defer></script>
       </head>
       <body className={inter.className}>{children}</body>
     </html>

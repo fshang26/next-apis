@@ -20,7 +20,7 @@ export async function GET(request: Request) {
     jsapi_ticket: t,
   }
   o.signature = sha1('jsapi_ticket='+t+'&noncestr='+o.nonceStr+'&timestamp='+o.timestamp+'&url='+url).toString();
-  return Response.json({ o })
+  return Response.json(o)
 
 }
 
